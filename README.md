@@ -4,5 +4,5 @@ Simple API wrapper for https://fumos.live
 ```py
 from fumoAPI import pickRandomFumo
 
-print(await pickRandomFumo()
+print(await pickRandomFumo())
 ```
