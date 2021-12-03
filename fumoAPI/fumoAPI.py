@@ -1,15 +1,15 @@
-import aiohttp, json, requests
+from aiohttp import ClientSession
+from requests import get
 
 url = 'https://fumos.live/api/fumo'
 
 async def pickRandomFumo():
-	async with aiohttp.ClientSession() as session:
+	async with ClientSession() as session:
 		async with session.get(url) as requestFumo:
-			fumoAPIText = await requestFumo.text()
-			fumoJson = json.loads(fumoAPIText)
-			return fumoJson["fumo"]
+			fumo = await requestFumo.json()
+			return fumo["fumo"]
 
 def randomFumo():
-	requestFumo = requests.get(url).text
-	fumoJson = json.loads(requestFumo)
-	return fumoJson["fumo"] 
+	requestFumo = get(url)
+	fumo = requestFumo.json()
+	return fumo["fumo"]
