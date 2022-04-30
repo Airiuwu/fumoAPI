@@ -1,7 +1,7 @@
 from aiohttp import ClientSession
 from requests import get
 
-url = 'https://fumos.live/api/fumo'
+url = 'https://fumoslive.herokuapp.com/api/fumo'
 
 async def pickRandomFumo():
 	async with ClientSession() as session:
